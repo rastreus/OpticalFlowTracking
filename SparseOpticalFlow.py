@@ -108,7 +108,10 @@ while(cap.isOpened()):
             newTracks.append(tr)
             
             #Draw a circle of thickness 2 with color green at position x,y
-            cv2.circle(frame, (x,y), 2, (0, 255, 0), -1)
+            try:
+                cv2.circle(frame, (x,y), 2, (0, 255, 0), -1)
+            except:
+                pass
             
         #Assign our new tracks to our tracks list
         tracks = newTracks
